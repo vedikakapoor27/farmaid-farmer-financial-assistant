@@ -99,4 +99,5 @@ def retrain_model():
         train_model()
         return {"message": "✅ Model retrained successfully!"}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e))        
+       
