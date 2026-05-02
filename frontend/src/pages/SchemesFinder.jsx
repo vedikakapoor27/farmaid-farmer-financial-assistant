@@ -9,9 +9,8 @@ function SchemesFinder() {
       id: 1,
       name: 'PM-KISAN',
       fullName: 'Pradhan Mantri Kisan Samman Nidhi',
-      benefit: '₹6,000 per year',
-      description:
-        'Direct income support of ₹6,000 per year to all landholding farmer families in three equal installments of ₹2,000 each.',
+      benefit: '6,000 per year',
+      description: 'Direct income support of 6,000 per year to all landholding farmer families in three equal installments of 2,000 each.',
       eligibility: 'All landholding farmer families',
       category: 'Financial Aid',
       icon: '💰',
@@ -25,8 +24,7 @@ function SchemesFinder() {
       name: 'Fasal Bima Yojana',
       fullName: 'Pradhan Mantri Fasal Bima Yojana',
       benefit: 'Crop insurance coverage',
-      description:
-        'Provides financial support to farmers suffering crop loss or damage due to unforeseen events like natural calamities, pests and diseases.',
+      description: 'Provides financial support to farmers suffering crop loss or damage due to unforeseen events like natural calamities, pests and diseases.',
       eligibility: 'All farmers growing notified crops',
       category: 'Insurance',
       icon: '🛡️',
@@ -39,9 +37,8 @@ function SchemesFinder() {
       id: 3,
       name: 'Kisan Credit Card',
       fullName: 'Kisan Credit Card Scheme',
-      benefit: 'Credit up to ₹3 lakh at 4% interest',
-      description:
-        'Provides farmers with affordable credit for agricultural needs including purchase of seeds, fertilizers and other farm inputs.',
+      benefit: 'Credit up to 3 lakh at 4% interest',
+      description: 'Provides farmers with affordable credit for agricultural needs including purchase of seeds, fertilizers and other farm inputs.',
       eligibility: 'All farmers, sharecroppers, tenant farmers',
       category: 'Credit',
       icon: '💳',
@@ -55,8 +52,7 @@ function SchemesFinder() {
       name: 'PMKSY',
       fullName: 'Pradhan Mantri Krishi Sinchai Yojana',
       benefit: 'Irrigation infrastructure support',
-      description:
-        'Aims to provide end to end solutions in irrigation supply chain with focus on creating sources, distribution network and farm level application.',
+      description: 'Aims to provide end to end solutions in irrigation supply chain with focus on creating sources, distribution network and farm level application.',
       eligibility: 'Farmers with agricultural land',
       category: 'Irrigation',
       icon: '💧',
@@ -70,8 +66,7 @@ function SchemesFinder() {
       name: 'Soil Health Card',
       fullName: 'Soil Health Card Scheme',
       benefit: 'Free soil testing and recommendations',
-      description:
-        'Issues soil health cards to farmers with crop-wise recommendations of nutrients and fertilizers to improve productivity.',
+      description: 'Issues soil health cards to farmers with crop-wise recommendations of nutrients and fertilizers to improve productivity.',
       eligibility: 'All farmers',
       category: 'Advisory',
       icon: '🌱',
@@ -85,8 +80,7 @@ function SchemesFinder() {
       name: 'eNAM',
       fullName: 'National Agriculture Market',
       benefit: 'Better price discovery for produce',
-      description:
-        'Online trading platform that networks existing APMC mandis to create a unified national market for agricultural commodities.',
+      description: 'Online trading platform that networks existing APMC mandis to create a unified national market for agricultural commodities.',
       eligibility: 'All farmers with produce to sell',
       category: 'Market Access',
       icon: '🏪',
@@ -99,9 +93,8 @@ function SchemesFinder() {
       id: 7,
       name: 'PKVY',
       fullName: 'Paramparagat Krishi Vikas Yojana',
-      benefit: '₹50,000 per hectare for 3 years',
-      description:
-        'Promotes organic farming by providing financial assistance to farmers for adopting organic farming practices.',
+      benefit: '50,000 per hectare for 3 years',
+      description: 'Promotes organic farming by providing financial assistance to farmers for adopting organic farming practices.',
       eligibility: 'Farmers willing to adopt organic farming',
       category: 'Financial Aid',
       icon: '🌿',
@@ -115,8 +108,7 @@ function SchemesFinder() {
       name: 'RKVY',
       fullName: 'Rashtriya Krishi Vikas Yojana',
       benefit: 'Infrastructure and technology support',
-      description:
-        'Incentivizes states to increase public investment in agriculture and allied sectors with flexibility in planning and execution.',
+      description: 'Incentivizes states to increase public investment in agriculture and allied sectors with flexibility in planning and execution.',
       eligibility: 'Farmers through state government programs',
       category: 'Advisory',
       icon: '📋',
@@ -134,8 +126,7 @@ function SchemesFinder() {
 
   const filteredSchemes = schemes.filter(s => {
     const matchesCategory =
-      activeCategory === 'All' ||
-      s.category === activeCategory;
+      activeCategory === 'All' || s.category === activeCategory;
     const matchesSearch =
       s.name.toLowerCase().includes(search.toLowerCase()) ||
       s.fullName.toLowerCase().includes(search.toLowerCase()) ||
@@ -146,7 +137,6 @@ function SchemesFinder() {
   return (
     <div style={styles.container}>
 
-      {/* Header */}
       <div style={styles.header}>
         <div>
           <h1 style={styles.title}>🏛️ Government Schemes</h1>
@@ -156,13 +146,10 @@ function SchemesFinder() {
         </div>
         <div style={styles.statsBox}>
           <span style={styles.statsNum}>{schemes.length}</span>
-          <span style={styles.statsLabel}>
-            Active Schemes
-          </span>
+          <span style={styles.statsLabel}>Active Schemes</span>
         </div>
       </div>
 
-      {/* Search Bar */}
       <div style={styles.searchBar}>
         <span style={styles.searchIcon}>🔍</span>
         <input
@@ -177,12 +164,11 @@ function SchemesFinder() {
             style={styles.clearBtn}
             onClick={() => setSearch('')}
           >
-            ✕
+            X
           </button>
         )}
       </div>
 
-      {/* Category Filter */}
       <div style={styles.categoryRow}>
         {categories.map(cat => (
           <button
@@ -191,11 +177,9 @@ function SchemesFinder() {
             style={{
               ...styles.categoryBtn,
               backgroundColor:
-                activeCategory === cat
-                  ? '#16a34a' : 'white',
+                activeCategory === cat ? '#16a34a' : 'white',
               color:
-                activeCategory === cat
-                  ? 'white' : '#6b7280'
+                activeCategory === cat ? 'white' : '#6b7280'
             }}
           >
             {cat}
@@ -203,7 +187,6 @@ function SchemesFinder() {
         ))}
       </div>
 
-      {/* Results Count */}
       <p style={styles.resultsText}>
         Showing {filteredSchemes.length} scheme
         {filteredSchemes.length !== 1 ? 's' : ''}
@@ -211,7 +194,6 @@ function SchemesFinder() {
         {search && ` for "${search}"`}
       </p>
 
-      {/* Schemes Grid */}
       {filteredSchemes.length === 0 ? (
         <div style={styles.emptyState}>
           <p style={styles.emptyIcon}>🔍</p>
@@ -233,7 +215,6 @@ function SchemesFinder() {
           {filteredSchemes.map(scheme => (
             <div key={scheme.id} style={styles.schemeCard}>
 
-              {/* Card Header */}
               <div style={styles.cardHeader}>
                 <div style={{
                   ...styles.schemeIconBox,
@@ -256,18 +237,17 @@ function SchemesFinder() {
                   backgroundColor: '#dcfce7',
                   color: '#16a34a'
                 }}>
-                  ✓ {scheme.status}
+                  Active
                 </span>
               </div>
 
-              {/* Benefit Highlight */}
               <div style={{
                 ...styles.benefitBox,
                 backgroundColor: scheme.bg,
                 borderLeft: `4px solid ${scheme.color}`
               }}>
                 <span style={styles.benefitLabel}>
-                  💎 Benefit:
+                  Benefit:
                 </span>
                 <span style={{
                   ...styles.benefitValue,
@@ -277,22 +257,19 @@ function SchemesFinder() {
                 </span>
               </div>
 
-              {/* Description */}
               <p style={styles.description}>
                 {scheme.description}
               </p>
 
-              {/* Eligibility */}
               <div style={styles.eligibilityBox}>
                 <span style={styles.eligibilityLabel}>
-                  ✅ Eligibility:
+                  Eligibility:
                 </span>
                 <span style={styles.eligibilityText}>
                   {scheme.eligibility}
                 </span>
               </div>
 
-              {/* Footer */}
               <div style={styles.cardFooter}>
                 <span style={{
                   ...styles.categoryTag,
@@ -310,13 +287,15 @@ function SchemesFinder() {
                     backgroundColor: scheme.color
                   }}
                 >
-                  Apply Now →
+                  Apply Now
                 </a>
               </div>
+
             </div>
           ))}
         </div>
       )}
+
     </div>
   );
 }
@@ -513,6 +492,7 @@ const styles = {
     fontSize: '0.85rem',
     fontWeight: '600',
     textDecoration: 'none',
+    display: 'inline-block',
   },
   emptyState: {
     textAlign: 'center',
