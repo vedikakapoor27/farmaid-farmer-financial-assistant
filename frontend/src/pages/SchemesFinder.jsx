@@ -278,7 +278,7 @@ function SchemesFinder() {
                 }}>
                   {scheme.category}
                 </span>
-                
+                <a
                   href={scheme.link}
                   target="_blank"
                   rel="noreferrer"
@@ -286,7 +286,7 @@ function SchemesFinder() {
                     ...styles.applyBtn,
                     backgroundColor: scheme.color
                   }}
-                >
+                  >
                   Apply Now
                 </a>
               </div>
